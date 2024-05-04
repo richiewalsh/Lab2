@@ -1,6 +1,8 @@
 #include "mbed.h"
 #include <cstdio>
 
+int n = 7;
+
 int fib(int n){
 
 if(n == 0 || n == 1){
@@ -18,6 +20,13 @@ else{
 int main()
 {
     while (true) {
+
+        //return values for all numbers in fibonacci sequence until n value is reached
+        for(int i = 0; i <= n; i++){
+
+        printf("%d, ", fib(i));
+
+        }
 
     }
 }
