@@ -1,28 +1,15 @@
 #include "mbed.h"
 #include <cstdio>
 
-//Error : Called object type 'int' is not a function or function pointer clang(typecheck_call_not_function)[Ln24, Col4]
-
-int i = 0;
-int j = 1;
-int k = 0;
-
 int fib(int n){
 
-if(i == n){
-
-    return i;
-
+if(n == 0 || n == 1){
+    //first 2 values are themselves so return the input
+    return n;
 }
 else{
-
-int fib = j + k;
-printf(fib);
-j = k;
-k = fib;
-i = i + 1;
-fib(i);
-
+    //work way through sequence until values of fib(n-1) and fib(n-2) are known and then add together
+    return(fib(n-1) + fib(n-2));
 }
 
 }
