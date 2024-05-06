@@ -1,7 +1,7 @@
 #include "mbed.h"
 #include <cstdio>
 
-int n = 7;
+int n = 10;
 
 int fib(int n){
 
@@ -19,14 +19,21 @@ else{
 // main() runs in its own thread in the OS
 int main()
 {
-    while (true) {
-
-        //return values for all numbers in fibonacci sequence until n value is reached
-        for(int i = 0; i <= n; i++){
+        printf("The fibonacci sequence for n = %d is: ", n);
+       for(int i = 0; i < n; i++){
 
         printf("%d, ", fib(i));
 
         }
+        printf("\r\n");
+    while (true) {
+/*
+        //return values for all numbers in fibonacci sequence until n value is reached
+        for(int i = 0; i < n; i++){
+
+        printf("%d, \r\n", fib(i));
+
+        }*/
 
     }
 }
