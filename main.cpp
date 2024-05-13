@@ -1,32 +1,25 @@
 #include "mbed.h"
 #include <cstdio>
 
+// Assign first two values in sequence so it can be started
+int n1 = 0;
+int n2 = 1;
 // set how many numbers in the sequence are desired
 int n = 10;
-
-//function is recursive as it calls itself
-int fib(int n){
-//This sets the basis for every subsequent value in the sequence. 
-if(n == 0 || n == 1){
-    //first 2 values are themselves so return the input
-    return n;
-}
-else{
-    //work way through sequence until values of fib(n-1) and fib(n-2) are known and then add together
-    return(fib(n-1) + fib(n-2));
-}
-
-}
 
 // main() runs in its own thread in the OS
 int main()
 {
     
-        printf("The fibonacci sequence for n = %d is: ", n);
-       for(int i = 0; i < n; i++){
-
-        printf("%d, ", fib(i));
-
+    printf("The fibonacci sequence for n = %d is: %d, %d,", n, n1, n2);
+    // for loop to complete n values
+       for(int i = 2; i < n; i++){
+           // get next therm by adding the last two
+           int n3 = n1 + n2;
+           printf(" %d,", n3);
+           // assign values of n1 and n2 as the next respective values in sequence 
+           n1 = n2;
+           n2 = n3;
         }
         printf("\r\n");
     while (true) {
