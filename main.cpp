@@ -1,10 +1,12 @@
 #include "mbed.h"
 #include <cstdio>
 
+// set how many numbers in the sequence are desired
 int n = 10;
 
+//function is recursive as it calls itself
 int fib(int n){
-
+//This sets the basis for every subsequent value in the sequence. 
 if(n == 0 || n == 1){
     //first 2 values are themselves so return the input
     return n;
@@ -19,6 +21,7 @@ else{
 // main() runs in its own thread in the OS
 int main()
 {
+    
         printf("The fibonacci sequence for n = %d is: ", n);
        for(int i = 0; i < n; i++){
 
@@ -27,14 +30,7 @@ int main()
         }
         printf("\r\n");
     while (true) {
-/*
-        //return values for all numbers in fibonacci sequence until n value is reached
-        for(int i = 0; i < n; i++){
-
-        printf("%d, \r\n", fib(i));
-
-        }*/
-
+    //do not run from here as loop continues indefinately
     }
 }
 
